@@ -1,6 +1,6 @@
 $input v_texcoord0
 
-#include <bgfx_shader.sh>
+#include <bgfx_shader.h>
 
 
 SAMPLER2D_AUTOREG(s_SunMoonTexture);

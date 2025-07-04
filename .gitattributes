@@ -1,2 +1,1 @@
-*.sc linguist-language=GLSL
-*.sc linguist-detectable=false
+*.sc linguist-language=HLSL

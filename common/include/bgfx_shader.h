@@ -4,7 +4,7 @@
  */
 
 
-#include "hlsl_to_glsl.sh"
+#include "hlsl_to_glsl.h"
 
 
 #ifndef BGFX_SHADER_H_HEADER_GUARD

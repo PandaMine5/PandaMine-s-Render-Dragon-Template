@@ -1,7 +1,7 @@
 $input v_color0
 
 
-#include <bgfx_shader.sh>
+#include <bgfx_shader.h>
 
 
 void main() {

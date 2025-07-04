@@ -19,6 +19,15 @@
       "macros": [],
       "platforms": ["Direct3D_SM65"]
     },
+    "windows_full": {
+      "macros": [],
+      "platforms": [
+        // "Direct3D_SM40",  // DirectX 10 (Not recommended)
+        "Direct3D_SM50",  // DirectX 11
+        "Direct3D_SM60",  // DirectX 12 (Shader Model 6.0)
+        "Direct3D_SM65"   // DirectX 12 (Shader Model 6.5)
+      ]
+    },
     "custom": {
       "macros": ["CUSTOM_MACRO"],
       "platforms": ["ESSL_310", "Metal", "Direct3D_SM65"]

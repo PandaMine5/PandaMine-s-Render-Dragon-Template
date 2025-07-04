@@ -7,7 +7,7 @@
 #define BGFX_COMPUTE_H_HEADER_GUARD
 
 
-#include "bgfx_shader.sh"
+#include "bgfx_shader.h"
 
 #ifndef __cplusplus
 

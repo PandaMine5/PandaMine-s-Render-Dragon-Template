@@ -1,6 +1,6 @@
 $input v_color0
 
-#include <bgfx_shader.sh>
+#include <bgfx_shader.h>
 
 
 uniform vec4 ShadowColor;

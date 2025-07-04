@@ -1,7 +1,7 @@
 $input  a_color0, a_position
 $output v_color0
 
-#include <bgfx_shader.sh>
+#include <bgfx_shader.h>
 
 void main() {
     v_color0 = a_color0;
