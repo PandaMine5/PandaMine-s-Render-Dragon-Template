@@ -6,31 +6,39 @@
 
     "exclude_patterns": [".*", "_*"]
   },
+  
   "profiles": {
     "android": {
       "macros": [],
-      "platforms": ["ESSL_300"]
+      "platforms": [
+        "ESSL_300",
+        "ESSL_310"
+      ]
     },
+    "android_compact": {
+      "macros": [],
+      "platforms": [
+        "ESSL_300"
+      ]
+    },
+
     "ios": {
       "macros": [],
       "platforms": ["Metal"]
     },
+
     "windows": {
       "macros": [],
-      "platforms": ["Direct3D_SM65"]
-    },
-    "windows_full": {
-      "macros": [],
       "platforms": [
-        // "Direct3D_SM40",  // DirectX 10 (Not recommended)
+        // "Direct3D_SM40",  // DirectX 10 (Not recommended - more errors)
         "Direct3D_SM50",  // DirectX 11
         "Direct3D_SM60",  // DirectX 12 (Shader Model 6.0)
         "Direct3D_SM65"   // DirectX 12 (Shader Model 6.5)
       ]
     },
-    "custom": {
-      "macros": ["CUSTOM_MACRO"],
-      "platforms": ["ESSL_310", "Metal", "Direct3D_SM65"]
+    "windows_compact": {
+      "macros": [],
+      "platforms": ["Direct3D_SM65"]
     }
   }
 }
