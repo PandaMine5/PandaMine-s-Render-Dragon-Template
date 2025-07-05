@@ -28,9 +28,6 @@ void main() {
       if (albedo.a < 0.5) {  discard;  }
     #endif
 
-    #ifndef TRANSPARENT
-        albedo.a = 1.0;
-    #endif
 
 
     #if defined(SEASONS) && (defined(ALPHA_TEST) || defined(OPAQUE))
