@@ -6,16 +6,8 @@ $input v_texcoord0, v_color0, v_fog, v_lightmapUV
 
 
 
-#ifndef DEPTH_ONLY_OPAQUE
-  SAMPLER2D_AUTOREG(s_MatTexture);
-  SAMPLER2D_AUTOREG(s_LightMapTexture);
-
-
-  #if defined(SEASONS) && (defined(ALPHA_TEST) || defined(OPAQUE))
-    SAMPLER2D_AUTOREG(s_SeasonsTexture);
-  #endif
-#endif
-
+SAMPLER2D_AUTOREG(s_MatTexture);
+SAMPLER2D_AUTOREG(s_LightMapTexture);
 
 
 void main() {
@@ -30,17 +22,10 @@ void main() {
 
 
 
-    #if defined(SEASONS) && (defined(ALPHA_TEST) || defined(OPAQUE))
-      albedo.rgb *= mix(vec3_splat(1.0), 2.0 * texture2D(s_SeasonsTexture, v_color0.xy).rgb, v_color0.y);
-      albedo.rgb *= v_color0.rrr;
-    #else
-      albedo.rgb *= v_color0;
-    #endif
+    albedo.rgb *= v_color0.rgb; // Block tint
+    albedo.rgb *= lightmap.rgb; // Lightmap shading
+    albedo.rgb = mix(albedo.rgb, v_fog.rgb, v_fog.a); // Fog effect 
 
-
-
-    albedo.rgb *= lightmap.rgb;
-    albedo.rgb = mix(albedo.rgb, v_fog.rgb, v_fog.a); 
 
     gl_FragColor = albedo;
   #else
